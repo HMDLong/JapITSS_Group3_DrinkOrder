@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { getKey } from '../utils/utils.js';
-import Item1 from './Item1.js';
+import MenuItem from './MenuItem.js';
 
-function Menu1(){
+function Menu(){
   const col_nums = 4;
   
   const [items, putItems] = useState([
@@ -27,7 +27,7 @@ function Menu1(){
           <div className="column is-4-tablet is-3-desktop">
             {
               items.filter(( _ , i) => i % col_nums === 0).map(item => (
-                <Item1
+                <MenuItem
                   item={item}
                 />
               ))
@@ -36,7 +36,7 @@ function Menu1(){
           <div className="column is-4-tablet is-3-desktop">
             {
               items.filter(( _ , i) => i % col_nums === 1).map(item => (
-                <Item1
+                <MenuItem
                   item={item}
                 />
               ))
@@ -45,7 +45,7 @@ function Menu1(){
           <div className="column is-4-tablet is-3-desktop">
             {
               items.filter(( _ , i) => i % col_nums === 2).map((item) => (
-                <Item1
+                <MẹnuItem
                   item={item}
                 />
               ))
@@ -54,7 +54,7 @@ function Menu1(){
           <div className="column is-4-tablet is-3-desktop">
             {
               items.filter(( _ , i) => i % col_nums === 3).map((item) => (
-                <Item1
+                <MenuItem
                   item={item}
                 />
               ))
@@ -66,4 +66,4 @@ function Menu1(){
   )
 }
 
-export default Menu1;
+export default Menu;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Menu1 from './Menu1.js';
+import Menu from './Menu.js';
 import Order from './Order.js';
 
 function Main(){
@@ -32,7 +32,7 @@ function Main(){
             }
           </ul>
         </div>
-        {activeTab === 1? <Menu1/> : <Order/>}
+        {activeTab === 1? <Menu/> : <Order/>}
       </div>
     </div>
   );

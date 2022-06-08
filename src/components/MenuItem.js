@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function OrderItem({ item }){
+function MenuItem({ item }){
   const [quantity, putQty] = useState(0);
 
   function addQty(){
@@ -41,4 +41,4 @@ function OrderItem({ item }){
   )
 }
 
-export default OrderItem;
+export default MenuItem;

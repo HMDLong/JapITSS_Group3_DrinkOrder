@@ -1,7 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
-import './styles/main.css';
+import './style/main.css';
 
 import Main from './components/Main.js';
 
