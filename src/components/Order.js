@@ -10,13 +10,17 @@ function Order({}){
   // }
   //
   const removeItem = (item) => {
-    const index = orders.indexOf(item);
-    if (index > -1) {
-      putOrders([...orders.splice(index+1, 1)]);
-    }
+    // const index = orders.indexOf(item);
+    // if (index > -1) {
+    //   putOrders([...orders.splice(index+1, 1)]);
+    // }
+
+    const newOrders = orders.filter(currentItem => currentItem.key !== item.key);
+    putOrders(newOrders);
   }
 
   const handleSum = () => {
+      total=0;
       orders.map( o => {
           total += o.price * o.quantity;
           number += o.quantity;
@@ -44,7 +48,7 @@ function Order({}){
                         <OrderItems
                             key={item.key}
                             item={item}
-                            handleRemove={()=>removeItem(item)}
+                            handleRemove={removeItem}
                         />
                     ))}
                     <tr>
@@ -59,7 +63,7 @@ function Order({}){
             </div>
 
         }
-      <div className="panel-block">Items: {orders.length}</div>
+      {/* <div className="panel-block">Items: {orders.length}</div> */}
     </div>
   );
 }

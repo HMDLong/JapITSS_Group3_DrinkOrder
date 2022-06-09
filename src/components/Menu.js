@@ -36,15 +36,15 @@ function Menu(){
   };
 
   const [items, putItems] = useState([
-    { key: getKey(), name: 'ice-tea', price: 10_000 , image_src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Iced_Tea_from_flickr.jpg/180px-Iced_Tea_from_flickr.jpg'},
-    { key: getKey(), name: 'milk-tea', price: 12_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'oolong-tea', price: 13_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 14_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 15_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 16_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 17_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 18_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 19_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' }
+    { key: getKey(), name: 'ミルクティー', price:  500, image_src: 'https://phuclong.com.vn/uploads/dish/8a92bb4b37c012-cafe5mon01.png'},
+    { key: getKey(), name: 'アイスクリーム', price: 550, image_src: 'https://phuclong.com.vn/uploads/dish/8ebb07f0eeccc1-resize_damdadunggu07.png' },
+    { key: getKey(), name: 'ウーロン茶', price: 600, image_src: 'https://phuclong.com.vn/uploads/dish/5318362664d05b-trlongdu.png' },
+    { key: getKey(), name: '里芋ミルクティー', price: 620, image_src: 'https://phuclong.com.vn/uploads/dish/4a625d6564e694-sinhtdu.png' },
+    { key: getKey(), name: '抹茶', price: 640, image_src: 'https://phuclong.com.vn/uploads/dish/d1cd8bafdefe9d-matchalattephclong.png' },
+    { key: getKey(), name: 'リンゴジュース', price: 650, image_src: 'https://phuclong.com.vn/uploads/dish/1c28e98e3cf766-topphclong.png' },
+    { key: getKey(), name: 'マンゴージュース', price: 700, image_src: 'https://phuclong.com.vn/uploads/dish/25a95ceca023f9-sinhtxoi.png' },
+    { key: getKey(), name: 'チョコレート', price: 720, image_src: 'https://phuclong.com.vn/uploads/dish/c1043b2fa58b01-sclacphxay.png' },
+    { key: getKey(), name: 'カプチーノ', price: 750, image_src: 'https://phuclong.com.vn/uploads/dish/d12b476cb8261d-cphcappuccinoxay.png' }
   ]);
 
   const getData = () => {

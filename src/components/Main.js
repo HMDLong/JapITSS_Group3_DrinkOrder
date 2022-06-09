@@ -7,8 +7,8 @@ function Main(){
   const [activeTab, setActive] = useState(1);
 
   const tabs = [
-    {id: 1, title: 'Menu'},
-    {id: 2, title: 'Order'}
+    {id: 1, title: 'メニュー'},
+    {id: 2, title: '注文'}
   ];
 
   return (

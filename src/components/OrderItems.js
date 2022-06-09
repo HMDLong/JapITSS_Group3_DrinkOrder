@@ -17,7 +17,7 @@ function OrderItems({item, handleRemove}){
             <td>{item.quantity}</td>
             <td>{item.price * item.quantity}</td>
             <td><button className="button is-danger is-outlined is-fullwidth"
-                        onClick={handleRemove}>
+                        onClick={()=>{handleRemove(item)}}>
                  <span className="icon">
                      <i className="fa-solid fa-trash-can"></i>
                  </span>
