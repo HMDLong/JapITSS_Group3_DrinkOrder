@@ -2,11 +2,33 @@ import React, { useState } from 'react';
 import { getKey } from '../utils/utils.js';
 import MenuItem from './MenuItem.js';
 import Search from "./Search";
+import useStorage from "../hook/orderStorage";
 
 function Menu(){
   const col_nums = 4;
 
   const [query, putQuery] = useState('');
+  const [orders, putOrders] = useStorage();
+
+  const handleAdd = (item, quantity) => {
+    let order = {...item, quantity};
+    if (!orders.find(o => o.key === order.key))
+    {
+      let newOrders = [...orders]
+      newOrders.push(order);
+      putOrders(newOrders);
+    }
+    else
+    {
+      const changeOrders = orders.map(o => {
+        if (o.key === order.key) {
+          o.quantity += order.quantity;
+        }
+        return o;
+      });
+      putOrders(changeOrders);
+    }
+  }
 
   const handleSearch = query =>{
     putQuery(query);
@@ -53,6 +75,7 @@ function Menu(){
                 <MenuItem
                     key={item.key}
                     item={item}
+                    onAdd={handleAdd}
                 />
               ))
             }
