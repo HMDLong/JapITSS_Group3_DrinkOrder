@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { getKey } from '../utils/utils.js';
 import MenuItem from './MenuItem.js';
 import Search from "./Search";
 import useStorage from "../hook/orderStorage";
+import {drinks} from "../utils/drinkList";
 
 function Menu(){
   const col_nums = 4;
@@ -23,7 +23,7 @@ function Menu(){
     {
       const changeOrders = orders.map(o => {
         if (o.key === order.key) {
-          o.quantity += order.quantity;
+          o.quantity = order.quantity;
         }
         return o;
       });
@@ -35,17 +35,7 @@ function Menu(){
     putQuery(query);
   };
 
-  const [items, putItems] = useState([
-    { key: getKey(), name: 'ice-tea', price: 10_000 , image_src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Iced_Tea_from_flickr.jpg/180px-Iced_Tea_from_flickr.jpg'},
-    { key: getKey(), name: 'milk-tea', price: 12_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'oolong-tea', price: 13_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 14_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 15_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 16_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 17_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 18_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' },
-    { key: getKey(), name: 'milk-tea', price: 19_000, image_src: 'https://waoteacoffee.vn/storage/app/uploads/public/607/070/73c/thumb_409_600_0_0_0_auto.jpeg' }
-  ]);
+  const [items, putItems] = useState(drinks);
 
   const getData = () => {
     let drinkList = items;
@@ -117,6 +107,7 @@ function Menu(){
         </div>
       </div>
     </section>
+
   )
 }
 

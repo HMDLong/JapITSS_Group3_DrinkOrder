@@ -27,12 +27,9 @@ function MenuItem({ item, onAdd}){
         <div className="card-content">
           <div className="media">
             <div className="media-content">
-              <p className="title is-4">{item.name}</p>
-              <p className="subtitle is-6">{item.price}</p>
+              <p className="title is-6">{item.name}</p>
+              <p className="subtitle is-6"><i className="fa-solid fa-yen-sign" color='brown'></i>{item.price}</p>
             </div>
-          </div>
-          <div className="content">
-            Giai nhiet mua he
           </div>
         </div>
         <footer className="card-footer">

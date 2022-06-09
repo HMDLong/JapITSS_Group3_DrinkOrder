@@ -7,8 +7,8 @@ function Main(){
   const [activeTab, setActive] = useState(1);
 
   const tabs = [
-    {id: 1, title: 'Menu'},
-    {id: 2, title: 'Order'}
+    {id: 1, title: 'メニュー'},
+    {id: 2, title: '注文'}
   ];
 
   return (
@@ -19,7 +19,7 @@ function Main(){
                   飲み物を注文するアプリ
               </p>
               <figure className="image is-fullwidth">
-                  <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-summer-seaside-summer-drink-blue-cold-banner-image_161245.jpg" alt=''></img>
+                  <img src="https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-cold-drink-poster-background-material-image_151003.jpg" alt='' height='50'></img>
               </figure>
           </div>
       </section>
@@ -30,7 +30,7 @@ function Main(){
               tabs.map(tab => (
                 <li className={tab.id === activeTab? 'is-active' : ''} key={tab.id}>
                   <a onClick={() => setActive(tab.id)}>
-                    {tab.title}
+                    <b>{tab.title}</b>
                   </a>
                 </li>
               ))
