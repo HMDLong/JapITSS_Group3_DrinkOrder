@@ -4,8 +4,7 @@ import OrderItems from "./OrderItems";
 
 function Order({}){
   const [orders, putOrders, clearOrders] = useStorage();
-  let total = 0;
-
+  let total=0, number=0;
   // const addItem = (newItem) => {
   //   putOrder([...orderItems, newItem])
   // }
@@ -17,8 +16,12 @@ function Order({}){
     }
   }
 
-  const handleSum = (item) => {
-      total += item.price * item.quantity;
+  const handleSum = () => {
+      orders.map( o => {
+          total += o.price * o.quantity;
+          number += o.quantity;
+      });
+      return {total, number};
   }
   
   return (
@@ -42,13 +45,15 @@ function Order({}){
                             key={item.key}
                             item={item}
                             handleRemove={()=>removeItem(item)}
-                            onSum={()=>handleSum(item)}
                         />
                     ))}
-                    <tr></tr>
-                    <th colSpan='4'>合計</th>
-                    <th>{total}</th>
-                    <th></th>
+                    <tr>
+                        <th colSpan='3'>合計</th>
+                        <th>{handleSum().number}</th>
+                        <th>{handleSum().total}</th>
+                        <th></th>
+                    </tr>
+
                     </tbody>
                 </table>
             </div>

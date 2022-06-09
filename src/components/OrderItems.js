@@ -1,7 +1,6 @@
 import React from "react";
 
-function OrderItems({item, handleRemove, onSum}){
-    onSum(item);
+function OrderItems({item, handleRemove}){
 
     return(
         <tr key={item.key}>
