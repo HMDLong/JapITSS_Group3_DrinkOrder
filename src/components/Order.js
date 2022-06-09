@@ -27,10 +27,13 @@ function Order({}){
     }
 
   const removeItem = (item) => {
-    const index = orders.indexOf(item);
-    if (index > -1) {
-      putOrders([...orders.splice(index+1, 1)]);
-    }
+    // const index = orders.indexOf(item);
+    // if (index > -1) {
+    //   putOrders([...orders.splice(index+1, 1)]);
+    // }
+
+    const newOrders = orders.filter(currentItem => currentItem.key !== item.key);
+    putOrders(newOrders);
   }
 
   const handleSum = () => {
