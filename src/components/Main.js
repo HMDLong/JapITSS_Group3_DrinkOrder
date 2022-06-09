@@ -13,10 +13,15 @@ function Main(){
 
   return (
     <div className="container">
-      <section className="hero">
-        <figure className="image">
-          <img src="https://png.pngtree.com/background/20210711/original/pngtree-icy-summer-fruit-drink-poster-banner-picture-image_1090670.jpg" alt=''></img>
-        </figure>
+      <section className="hero is-primary">
+          <div className="hero-body">
+              <p className="title has-text-centered">
+                  飲み物を注文するアプリ
+              </p>
+              <figure className="image is-fullwidth">
+                  <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-summer-seaside-summer-drink-blue-cold-banner-image_161245.jpg" alt=''></img>
+              </figure>
+          </div>
       </section>
       <div className="container is-fluid">
         <div className="tabs">

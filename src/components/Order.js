@@ -1,36 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useStorage from '../hook/orderStorage'
+import OrderItems from "./OrderItems";
 
-function Order(){
-  const [orderItems, putOrder] = useState([]);
+function Order({}){
+  const [orders, putOrders, clearOrders] = useStorage();
 
-  const addItem = (newItem) => {
-    putOrder([...orderItems, newItem])
-  }
-
+  // const addItem = (newItem) => {
+  //   putOrder([...orderItems, newItem])
+  // }
+  //
   const removeItem = (item) => {
-    const index = orderItems.indexOf(item);
+    const index = orders.indexOf(item);
     if (index > -1) {
-      putOrder([...orderItems.splice(index, 1)]);
+      putOrders([...orders.splice(index+1, 1)]);
     }
-  }
-
-  const clearOrder = () => {
-    putOrder([])
   }
   
   return (
     <div className="panel">
       <div className="panel-heading">Your Order</div>
-      {orderItems.map(item => (
-        <div className="panel-block">
-          <div className="panel">
-            <div className="panel-block">{item.name}</div>
-            <div className="panel-block">{item.quantity}</div>
-            <button class="button is-link is-outlined is-fullwidth" onClick={() => removeItem(item)}>Remove</button>
-          </div>
-        </div>
+      {orders.map(item => (
+          item.key &&
+          <OrderItems
+          key={item.key}
+          item={item}
+          handleRemove={()=>removeItem(item)}
+          />
       ))}
-      <div className="panel-block">Items: {orderItems.length}</div>
+      <div className="panel-block">Items: {orders.length}</div>
     </div>
   );
 }

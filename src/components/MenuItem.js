@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-function MenuItem({ item }){
+
+function MenuItem({ item, onAdd}){
   const [quantity, putQty] = useState(0);
 
   function addQty(){
@@ -9,6 +10,10 @@ function MenuItem({ item }){
 
   function reduceQty(){
     putQty(quantity-1 < 0? 0 : quantity-1);
+  }
+
+  const handleClick = () => {
+    onAdd(item, quantity);
   }
 
   return (
@@ -31,10 +36,24 @@ function MenuItem({ item }){
           </div>
         </div>
         <footer className="card-footer">
-          <input className="input" type="text" value={quantity}/>
-          <button className="button is-outlined is-small is-responsive is-primary" onClick={() => addQty()}>{'+'}</button>
-          <button className="button is-outlined is-small is-responsive is-primary" onClick={() => reduceQty()}>{'-'}</button>
-          <button className="button is-outlined is-small is-responsive is-success">Add to order</button>
+          <input className="input is-outlined is-small is-responsive is-primary has-text-centered m-2" type="text" value={quantity}/>
+          <button className="button is-outlined is-small is-responsive is-primary m-2" onClick={() => addQty()}>
+             <span className="icon">
+              <i className="fa-solid fa-plus"></i>
+            </span>
+          </button>
+          <button className="button is-outlined is-small is-responsive is-primary m-2" onClick={() => reduceQty()}>
+            <span className="icon">
+              <i className="fa-solid fa-minus"></i>
+            </span>
+          </button>
+          <button className="button is-outlined is-small is-responsive is-success"
+                  onClick={handleClick}
+          >
+            <span className="icon">
+              <i className="fas fa-cart-plus"></i>
+            </span>
+          </button>
         </footer>
       </div>
     </div>
