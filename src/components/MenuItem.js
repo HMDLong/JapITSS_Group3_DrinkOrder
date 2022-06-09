@@ -16,7 +16,7 @@ function MenuItem({ item }){
       <div className="card">
         <div className="card-image">
           <figure className="image is-square">
-            <img src={item.image_src} max-width="128" max-height="128"></img>
+            <img src={item.image_src} max-width='128' max-height='128' alt={item.name}></img>
           </figure>
         </div>
         <div className="card-content">
@@ -30,11 +30,11 @@ function MenuItem({ item }){
             Giai nhiet mua he
           </div>
         </div>
-        <footer class="card-footer">
-          <input class="input" type="text" value={quantity}/>
-          <button class="button is-outlined is-small is-responsive is-primary" onClick={() => addQty()}>{'+'}</button>
-          <button class="button is-outlined is-small is-responsive is-primary" onClick={() => reduceQty()}>{'-'}</button>
-          <button class="button is-outlined is-small is-responsive is-success">Add to order</button>  
+        <footer className="card-footer">
+          <input className="input" type="text" value={quantity}/>
+          <button className="button is-outlined is-small is-responsive is-primary" onClick={() => addQty()}>{'+'}</button>
+          <button className="button is-outlined is-small is-responsive is-primary" onClick={() => reduceQty()}>{'-'}</button>
+          <button className="button is-outlined is-small is-responsive is-success">Add to order</button>
         </footer>
       </div>
     </div>
