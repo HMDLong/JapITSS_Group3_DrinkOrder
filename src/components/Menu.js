@@ -45,7 +45,7 @@ function Menu(){
           <div className="column is-4-tablet is-3-desktop">
             {
               items.filter(( _ , i) => i % col_nums === 2).map((item) => (
-                <MẹnuItem
+                <MenuItem
                   item={item}
                 />
               ))
