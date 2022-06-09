@@ -15,15 +15,15 @@ function Main(){
     <div className="container">
       <section className="hero">
         <figure className="image">
-          <img src="https://png.pngtree.com/background/20210711/original/pngtree-icy-summer-fruit-drink-poster-banner-picture-image_1090670.jpg"></img>
+          <img src="https://png.pngtree.com/background/20210711/original/pngtree-icy-summer-fruit-drink-poster-banner-picture-image_1090670.jpg" alt=''></img>
         </figure>
       </section>
       <div className="container is-fluid">
-        <div class="tabs">
+        <div className="tabs">
           <ul>
             {
               tabs.map(tab => (
-                <li class={tab.id === activeTab? 'is-active' : ''}>
+                <li className={tab.id === activeTab? 'is-active' : ''} key={tab.id}>
                   <a onClick={() => setActive(tab.id)}>
                     {tab.title}
                   </a>
