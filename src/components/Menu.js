@@ -11,6 +11,7 @@ function Menu(){
   const [orders, putOrders] = useStorage();
 
   const handleAdd = (item, quantity) => {
+    if (quantity === 0) return;
     let order = {...item, quantity};
     if (!orders.find(o => o.key === order.key))
     {
@@ -86,6 +87,7 @@ function Menu(){
                 <MenuItem
                   item={item}
                   key={item.key}
+                  onAdd={handleAdd}
                 />
               ))
             }
@@ -96,6 +98,7 @@ function Menu(){
                 <MenuItem
                   item={item}
                   key={item.key}
+                  onAdd={handleAdd}
                 />
               ))
             }
@@ -106,6 +109,7 @@ function Menu(){
                 <MenuItem
                   item={item}
                   key={item.key}
+                  onAdd={handleAdd}
                 />
               ))
             }
